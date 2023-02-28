@@ -32,6 +32,16 @@ int main(int argc, char **argv) {
     circle[nCircle - 1].r = strtod(strchr(str, ',') + 1, NULL);
   }
 
+  for (int i = 0; i < nCircle; i++) {
+        printf(" %d. Окружность(%.2lf %.2lf, %.2lf) \n",
+               i + 1,
+               circle[i].point.x,
+               circle[i].point.y,
+               circle[i].r);
+        printf("\tПериметр = %.2f\n", 2 * M_PI * circle[i].r);
+        printf("\tПлощадь = %.2f\n", M_PI * circle[i].r * circle[i].r);
+  }
+
   free(circle);
   return 0;
 }
